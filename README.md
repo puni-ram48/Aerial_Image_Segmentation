@@ -1,5 +1,7 @@
 # Enhancing Aerial Image Segmentation: A Comparative Analysis of Machine Learning Approaches
 
+<img src="SegImage.png" width="800" height="466">
+
 ## Project Description
 
 This project provides two complete pipelines for semantic segmentation of aerial imagery:

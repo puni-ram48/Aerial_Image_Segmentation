@@ -114,7 +114,12 @@ Please ensure your code is well-documented.
 ## Authors and Acknowledgment
 This project was initiated and completed by Puneetha Dharmapura Shrirama. 
 
-Special thanks to our supervisor **[Thomas Maier]** for their valuable guidance and support throughout the project.
+Special thanks to our supervisor **Thomas Maier** for their valuable guidance and support throughout the project.
 
+Special thanks to:
+
+- **Meta AI** for providing the **Segment Anything Model (SAM)**.
+- **NVIDIA** and **Huggingface** for making the **SegFormer models** publicly available.
+  
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

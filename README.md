@@ -1,6 +1,6 @@
 # Enhancing Aerial Image Segmentation: A Comparative Analysis of Machine Learning Approaches
 
-<img src="SegImage.png" width="800" height="466">
+<img src="SegImage.png" width="1000" height="300">
 
 ## Project Description
 

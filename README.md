@@ -78,7 +78,7 @@ Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
+- Update `config.py` as needed (input/output paths).
 - Download the SAM model weights:
 
 ```bash

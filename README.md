@@ -1,141 +1,120 @@
 # Enhancing Aerial Image Segmentation: A Comparative Analysis of Machine Learning Approaches
 
-This repository provides two segmentation pipelines for processing aerial images:
+## Project Description
 
-- **SegFormer-based Pretrained Segmentation**
+This project provides two complete pipelines for semantic segmentation of aerial imagery:
+
+- **SegFormer-based Pretrained Segmentation**  
 - **SAM + Heuristic-based Classification**
 
-Both pipelines are modular, inference-ready, and evaluated on standard segmentation metrics.
+The purpose of this project is to efficiently perform segmentation without model training by leveraging powerful pretrained models. It enables users to generate semantic masks for road, green area, and building classes and evaluate their segmentation quality using robust metrics.
+
+### Key Features
+
+- 📌 Pretrained SegFormer-B5 model for fast and accurate inference.
+- 📌 Segment Anything Model (SAM) integration with heuristic-based classification.
+- 📌 Professional evaluation pipeline: Pixel Accuracy, IoU, Dice Score, Precision, Recall, and F1 Score.
+- 📌 Modular code structure for easy customization.
 
 ---
 
-## 📍 SegFormer Pipeline
+## ⚙️ Installation Instructions
 
-- Uses pre-trained **SegFormer-B5** model fine-tuned on Cityscapes.
-- Processes input images, generates segmented outputs.
-- Supports evaluation: Pixel Accuracy, IoU, Dice, Precision, Recall, and F1.
-
-Scripts:
-- `segformer_segmentation/pipeline.py` — Run segmentation
-- `segformer_segmentation/visualization.py` — Visualize predictions vs ground truth
-- `segformer_segmentation/evaluation.py` — Evaluate segmentation performance
-
-Configuration:
-- Modify `segformer_segmentation/config.json` to set paths and batch size.
-
----
-
-## 📍 SAM + Heuristic Pipeline
-
-- Uses **Segment Anything Model (SAM)** to generate masks.
-- Applies **HSV color-based** and **contour-based** heuristics to classify regions into:
-  - Road
-  - Green Area
-  - Building
-- Evaluates segmentation with standard metrics.
-
-Scripts:
-- `sam_heuristic_segmentation/download_model.py` — Download the SAM model
-- `sam_heuristic_segmentation/pipeline.py` — Run segmentation and classification
-- `sam_heuristic_segmentation/visualization.py` — Visualize results
-- `sam_heuristic_segmentation/evaluation.py` — Evaluate segmentation performance
-
-Configuration:
-- Modify `sam_heuristic_segmentation/config.py` to adjust settings.
-
----
-
-## ⚙️ Installation
-
-Clone the repository and install required packages:
+*  Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/segmentation_project.git
-cd segmentation_project
-pip install -r requirements.txt
+git clone https://github.com/puni-ram48/Aerial_Image_Segmentation.git
+cd Aerial_Image_Segmentation
 ```
-
 ---
 
-## 🚀 Running the Pipelines
+##  Usage Examples
 
-### SegFormer Segmentation
+### 1. SegFormer-based Segmentation
+
+Navigate to the SegFormer pipeline folder:
 
 ```bash
 cd segformer_segmentation
+```
+Install required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+- Update `config.json` as needed (input/output paths).
+- Run the segmentation:
+
+```bash
 python pipeline.py
+```
+
+- Visualize the segmented outputs:
+
+```bash
 python visualization.py
+```
+
+- Evaluate the segmentation performance:
+
+```bash
 python evaluation.py
 ```
 
 ---
 
-### SAM + Heuristic Classification
+### 2. SAM + Heuristic-based Classification
+
+Navigate to the SAM pipeline folder:
 
 ```bash
 cd sam_heuristic_segmentation
-python download_model.py
-python pipeline.py
-python visualization.py
-python evaluation.py
 ```
 
+Install required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+- Download the SAM model weights:
+
+```bash
+python download_model.py
+```
+
+- Run the segmentation and heuristic classification:
+
+```bash
+python pipeline.py
+```
+
+- Visualize outputs:
+
+```bash
+python visualization.py
+```
+
+- Evaluate the results:
+
+```bash
+python evaluation.py
+```
 ---
-
-## 📊 Evaluation Metrics
-
-Both pipelines evaluate segmentation performance using:
-
-- Pixel Accuracy
-- Intersection over Union (IoU)
-- Dice Score
-- Precision
-- Recall
-- F1 Score
-
-Metrics are reported per-image and per-class, with overall summaries.
-
----
-
-## 📢 Notes
-
-- Input images are resized to **1024x1024** before processing.
-- No model training is performed; pipelines are inference-only.
-- Configurations (input paths, output paths, batch size, etc.) can be easily adjusted via config files.
-- Ensure that filenames for input images and ground truth masks match exactly.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions to improve the project!
-
-To contribute:
-
-1. Fork this repository.
+## Contributing
+We welcome contributions to this project! If you would like to contribute, please follow these steps:
+1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/YourFeature`).
 3. Make your changes and commit them (`git commit -am 'Add some feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
-5. Open a Pull Request describing your changes.
+5. Create a new Pull Request.
 
-**Guidelines:**
-- Keep code modular and clean.
-- Document any new functionality clearly.
-- Ensure compatibility with the existing project structure.
-- Write meaningful commit messages.
+Please ensure your code is well-documented.
 
-Thank you for your contributions!
+## Authors and Acknowledgment
+This project was initiated and completed by Puneetha Dharmapura Shrirama. 
 
----
+Special thanks to our supervisor **[Thomas Maier]** for their valuable guidance and support throughout the project.
 
-## 👨‍💻 Author
-
-Developed by **Puneetha Dharmapura Shrirama**.
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
